@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export class Singleton<T> {
 	private static instance: any = null
 	public static Instance<T>(): T {

@@ -1,44 +1,97 @@
 {
-  "name": "oop-demo",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "element-ui": "^2.15.2",
-    "shortid": "^2.2.16",
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^9.1.2",
-    "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
-  },
-  "devDependencies": {
-    "@types/shortid": "0.0.29",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^6.2.2",
-    "lint-staged": "^9.5.0",
-    "prettier": "^2.2.1",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5",
-    "vue-template-compiler": "^2.6.11"
-  }
+	"name": "oop",
+	"version": "0.0.1",
+	"keywords": [
+		"typescript",
+		"vue",
+		"vuejs",
+		"pug",
+		"scss",
+		"element-plus",
+		"vue3"
+	],
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"commit": "git add .&&git-cz",
+		"stylelint": "stylelint 'src/**/*.{scss,vue}' --config '.stylelintrc.js' --fix"
+	},
+	"dependencies": {
+		"@vue/compiler-sfc": "^3.2.4",
+		"axios": "^0.21.1",
+		"core-js": "^3.6.5",
+		"element-plus": "^1.0.2-beta.71",
+		"md5": "^2.3.0",
+		"vue": "^3.2.4",
+		"vue-loader": "^16.5.0",
+		"vue-router": "^4.0.11",
+		"vuedraggable": "^4.0.3",
+		"shortid": "^2.2.16"
+	},
+	"devDependencies": {
+		"@types/shortid": "0.0.29",
+		"@babel/plugin-proposal-decorators": "^7.13.5",
+		"@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
+		"@babel/plugin-proposal-optional-chaining": "^7.12.1",
+		"@babel/plugin-transform-classes": "^7.14.2",
+		"@babel/plugin-transform-runtime": "^7.12.1",
+		"@commitlint/cli": "^9.1.2",
+		"@commitlint/config-conventional": "^13.1.0",
+		"@prettier/plugin-pug": "^1.16.5",
+		"@typescript-eslint/eslint-plugin": "^4.20.0",
+		"@typescript-eslint/parser": "^4.20.0",
+		"@vue/cli-plugin-babel": "~4.5.0",
+		"@vue/cli-plugin-eslint": "~4.5.0",
+		"@vue/cli-plugin-typescript": "^4.5.8",
+		"@vue/cli-service": "^4.5.7",
+		"@vue/eslint-config-prettier": "^6.0.0",
+		"@vue/eslint-config-standard": "^5.1.2",
+		"@vue/eslint-config-typescript": "^7.0.0",
+		"babel-eslint": "^8.1.1",
+		"babel-plugin-transform-class-properties": "^6.24.1",
+		"commitizen": "^4.2.3",
+		"commitlint-config-cz": "^0.13.2",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^6.7.2",
+		"eslint-plugin-flowtype": "^5.4.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^3.3.1",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-sonarjs": "^0.6.0",
+		"eslint-plugin-standard": "^5.0.0",
+		"eslint-plugin-vue": "^6.2.2",
+		"git-cz": "^4.7.6",
+		"husky": "^4.3.8",
+		"lint-staged": "^11.1.2",
+		"node-sass": "^4.14.1",
+		"postcss-prefix-selector": "^1.12.0",
+		"prettier": "^2.2.1",
+		"pug": "^3.0.0",
+		"pug-plain-loader": "^1.0.0",
+		"sass-loader": "^10.0.3",
+		"stylelint": "^13.3.2",
+		"stylelint-config-prettier": "^8.0.2",
+		"stylelint-config-recess-order": "^2.0.4",
+		"stylelint-config-standard": "^20.0.0",
+		"stylelint-scss": "^3.19.0",
+		"svg-sprite-loader": "^6.0.9",
+		"typescript": "^4.1.5",
+		"webpack-bundle-analyzer": "^3.9.0"
+	},
+	"author": "fish uncle",
+	"license": "MIT",
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "git-cz"
+		}
+	},
+	"lint-staged": {
+		"*.{js,ts,css,vue,scss}": "prettier  --plugin-search-dir ./node_modules --config .prettierrc --write"
+	}
 }

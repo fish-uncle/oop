@@ -1,14 +1,12 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-Vue.config.productionTip = false
-Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
+import 'element-plus/lib/theme-chalk/index.css'
 
-new Vue({
-	router,
-	store,
-	render: h => h(App),
-}).$mount('#app')
+const app = createApp(App)
+import ElementPlus from 'element-plus'
+
+app.use(ElementPlus, { size: 'mini', zIndex: 3000, labelPosition: 'left' })
+
+app.use(router)
+app.mount('#app')

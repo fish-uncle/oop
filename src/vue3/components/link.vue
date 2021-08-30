@@ -11,19 +11,21 @@ g(
 		:y2="c.y - node.y",
 		style="stroke: #006600")
 </template>
-
-<script>
+<script lang="ts">
 import EditorManager from '@/core/manager/editor-manager'
-export default {
+import { defineComponent, reactive, toRefs } from 'vue'
+
+export default defineComponent({
 	name: 'o-link',
-	components: {},
 	props: ['node'],
-	data() {
+	setup() {
+		const editor: EditorManager = EditorManager.Instance()
+		const state = reactive({ editor })
 		return {
-			editor: EditorManager.Instance(),
+			...toRefs(state),
 		}
 	},
-}
+})
 </script>
 
 <style lang="scss" scoped>

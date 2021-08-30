@@ -1,23 +1,50 @@
-.DS_Store
-node_modules
-/dist
+# Built application files
+*.apk
+*.ap_
 
+# Files for the Dalvik VM
+*.dex
 
-# local env files
-.env.local
-.env.*.local
+# Generated files
+*/bin/
+*/gen/
+*/out/
 
-# Log files
+# Log Files
+*.log
+
+# Android Studio
+.navigation/
+captures/
+
+# idea
+*/.idea/
+.idea/
+*.iml
+*/*.iml
+
+# eclipse
+.project
+.factorypath
+.classpath
+.settings/
+target/
+logs/
+
+# web
+dist/
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
+
+
+# others
+*/.DS_Store
+.DS_Store
 
 # Editor directories and files
-.idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?

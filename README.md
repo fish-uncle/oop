@@ -1,4 +1,4 @@
-# oop-demo
+# oop
 
 ### 前端中的 oop 编程实践
 

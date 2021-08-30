@@ -3,6 +3,9 @@ module.exports = {
 	env: {
 		node: true,
 	},
+	globals: {
+		echarts: true,
+	},
 	extends: [
 		'plugin:vue/essential',
 		'eslint:recommended',
@@ -16,6 +19,8 @@ module.exports = {
 	rules: {
 		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-		'@typescript-eslint/no-inferrable-types': 'off' // 关闭类型推断
+		'@typescript-eslint/ban-ts-comment': 0,
+		'@typescript-eslint/no-var-requires': 0,
+		'@typescript-eslint/ban-types': 'off',
 	},
 }
