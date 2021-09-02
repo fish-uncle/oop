@@ -53,7 +53,7 @@ export default defineComponent({
 		const editor: EditorManager = EditorManager.Instance()
 		const state = reactive({
 			processes: [],
-			current: '',
+			current: null,
 			editor,
 			employee,
 		})
