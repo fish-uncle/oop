@@ -9,15 +9,13 @@ const resolve = dir => {
 }
 
 module.exports = {
-	assetsDir: './',
-	filenameHashing: false,
+	publicPath: isProduction ? './' : '/',
 	productionSourceMap: false,
 	lintOnSave: false,
 	devServer: {
 		port: 3000,
 		hot: true,
 		open: true,
-		historyApiFallback: true,
 		disableHostCheck: true,
 	},
 	css: {

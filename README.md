@@ -1,5 +1,13 @@
 # oop
 
+<a href="https://app.travis-ci.com/github/fish-uncle/oop">
+<img src="https://app.travis-ci.com/fish-uncle/oop.svg?branch=master&status=created">
+</a>
+<a href="LICENSE">
+<img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+</a>
+
+
 ### 前端中的 oop 编程实践
 
 #### 基于 SVG 的简易流程管理系统
