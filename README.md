@@ -1,5 +1,6 @@
 # oop
 
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/fish-uncle/oop.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fish-uncle/oop/context:javascript)
 <a href="https://app.travis-ci.com/github/fish-uncle/oop">
 <img src="https://app.travis-ci.com/fish-uncle/oop.svg?branch=master&status=created">
 </a>
