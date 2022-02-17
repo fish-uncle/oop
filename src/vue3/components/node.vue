@@ -4,7 +4,7 @@ g.node(
 	:transform="`translate(${node.x},${node.y})`",
 	@mousedown="onStart")
 	rect(x="-40", y="-15", width="80", height="30", :style="nodeStyle")
-	text(x="-40", width="80", height="30", fill="#ffffff") {{ node.name }}
+	text(text-anchor="middle" width="80", height="30", fill="#333333") {{ node.name }}
 </template>
 <script lang="ts">
 import EditorManager from '@/core/manager/editor-manager'
@@ -40,15 +40,15 @@ export default defineComponent({
 			const currentNode = state.editor.currentNode
 			if (currentNode && currentNode.id === props.node.id) {
 				return {
-					fill: 'rgb(0, 0, 255)',
-					stroke: '#ff0000',
-					'stroke-width': 3,
+					fill: 'rgb(255, 255, 255)',
+					stroke: '#8ae0fb',
+					'stroke-width': 2,
 				}
 			} else {
 				return {
-					fill: 'rgb(0, 0, 255)',
-					stroke: '#006600',
-					'stroke-width': 3,
+					fill: 'rgb(255, 255, 255)',
+					stroke: '#ddd',
+					'stroke-width': 2,
 				}
 			}
 		})

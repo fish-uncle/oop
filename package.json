@@ -23,14 +23,13 @@
 		"core-js": "^3.6.5",
 		"element-plus": "^1.0.2-beta.71",
 		"md5": "^2.3.0",
+		"shortid": "^2.2.16",
 		"vue": "^3.2.4",
 		"vue-loader": "^16.5.0",
 		"vue-router": "^4.0.11",
-		"vuedraggable": "^4.0.3",
-		"shortid": "^2.2.16"
+		"vuedraggable": "^4.0.3"
 	},
 	"devDependencies": {
-		"@types/shortid": "0.0.29",
 		"@babel/plugin-proposal-decorators": "^7.13.5",
 		"@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
 		"@babel/plugin-proposal-optional-chaining": "^7.12.1",
@@ -39,6 +38,7 @@
 		"@commitlint/cli": "^9.1.2",
 		"@commitlint/config-conventional": "^13.1.0",
 		"@prettier/plugin-pug": "^1.16.5",
+		"@types/shortid": "0.0.29",
 		"@typescript-eslint/eslint-plugin": "^4.20.0",
 		"@typescript-eslint/parser": "^4.20.0",
 		"@vue/cli-plugin-babel": "~4.5.0",
@@ -65,7 +65,7 @@
 		"git-cz": "^4.7.6",
 		"husky": "^4.3.8",
 		"lint-staged": "^11.1.2",
-		"node-sass": "^7.0.0",
+		"node-sass": "^4.14.1",
 		"postcss-prefix-selector": "^1.12.0",
 		"prettier": "^2.2.1",
 		"pug": "^3.0.0",
