@@ -3,7 +3,7 @@ import shortid from 'shortid'
 import Node from '../node/node'
 
 interface Iid {
-	id:string
+	id: string
 }
 
 export default class Process extends ProcessBase {
@@ -17,8 +17,8 @@ export default class Process extends ProcessBase {
 		this.nodeMap = new Map()
 		const rootNode = new Node(shortid.generate(), '根节点')
 		rootNode.root = true
-		rootNode.x = 0
-		rootNode.y = 0
+		rootNode.x = 300
+		rootNode.y = 300
 		this.nodeList.push(rootNode)
 		this.nodeMap.set(rootNode.id, rootNode)
 	}
@@ -35,29 +35,29 @@ export default class Process extends ProcessBase {
 			id: this.id,
 			name: this.name,
 			root: this.root?.id,
-			nodeList: this.formatNodeList()
+			nodeList: this.formatNodeList(),
 		}
 		return JSON.stringify(data)
 	}
 
-	private formatNodeList():any {
-		const l:any[] = []
+	private formatNodeList(): any {
+		const l: any[] = []
 		this.nodeList.forEach(n => {
 			l.push({
-				id:n.id,
+				id: n.id,
 				name: n.name,
 				children: this.parseIds(n.children),
-				approver: this.parseIds(n.approver)
+				approver: this.parseIds(n.approver),
 			})
 		})
 		return l
 	}
 
-	private parseIds(list:Iid[]) {
-		const l:string[] = []
-		list.forEach((e:Iid) => {
+	private parseIds(list: Iid[]) {
+		const l: string[] = []
+		list.forEach((e: Iid) => {
 			l.push(e.id)
-		});
+		})
 		return l
 	}
 }

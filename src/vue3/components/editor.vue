@@ -5,7 +5,8 @@
 		el-button(@click="onSave") 保存
 	.button-group(v-if="editor.currentNode")
 		el-button(@click="onCreateNode") 新建节点
-.tab-list
+el-empty(v-if='!processes.length' content='暂无数据')
+.tab-list(v-if='processes.length')
 	.tab-list-item(
 		v-for="(p, index) in processes",
 		:class="{ current: current && current.id === p.id }",
@@ -13,7 +14,7 @@
 		@click="onSelect(index, p)")
 		span {{ p.name }}
 		i.el-icon-close(@click.stop="onCloseProcess(p, index)")
-.content
+.content(v-if='processes.length')
 	svg(
 		v-if="editor.currentProcess",
 		version="1.1",
@@ -58,10 +59,10 @@ export default defineComponent({
 			employee,
 		})
 		const onCreate = () => {
-			state.current = state.editor.createProcess()
+			;(state.current as any) = state.editor.createProcess()
 		}
 		const onSelect = index => {
-			state.current = state.editor.selectOneByIndex(index)
+			;(state.current as any) = state.editor.selectOneByIndex(index)
 		}
 		const onCloseProcess = (process, index) => {
 			state.editor.closeProcess(process, index)
@@ -78,7 +79,7 @@ export default defineComponent({
 		}
 		onMounted(() => {
 			state.editor.init()
-			state.processes = state.editor.getProcessList()
+			;(state.processes as any) = state.editor.getProcessList()
 		})
 		onBeforeUnmount(() => {
 			state.current = null
@@ -98,20 +99,20 @@ export default defineComponent({
 </script>
 <style lang="scss">
 body {
-	margin: 0;
-	padding: 0;
-	height: 100vh;
 	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
 	overflow: hidden;
 }
 #app {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
 	.header {
 		display: flex;
 		flex: none;
@@ -131,11 +132,11 @@ body {
 			height: 100%;
 		}
 		.right-panel {
+			box-sizing: border-box;
 			flex: none;
 			width: 240px;
-			border-left: 1px solid #dddddd;
-			box-sizing: border-box;
 			padding: 10px;
+			border-left: 1px solid #ddd;
 			.label {
 				margin: 10px 0;
 				font-size: 14px;
@@ -144,22 +145,22 @@ body {
 	}
 	.tab-list {
 		display: flex;
-		border-bottom: 1px solid #ddd;
 		height: 24px;
+		border-bottom: 1px solid #ddd;
 		.tab-list-item {
-			user-select: none;
-			font-size: 12px;
 			max-width: 240px;
-			color: #cccccc;
-			line-height: 24px;
 			height: 24px;
 			padding: 0 10px;
+			font-size: 12px;
+			line-height: 24px;
+			color: #ccc;
 			cursor: pointer;
+			user-select: none;
 			&.current {
+				color: #fff;
 				background: #2777df;
-				color: #ffffff;
 				&:hover {
-					color: #ffffff;
+					color: #fff;
 				}
 			}
 			&:hover {

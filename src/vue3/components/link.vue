@@ -9,7 +9,7 @@ g(
 		:y1="0",
 		:x2="c.x - node.x",
 		:y2="c.y - node.y",
-		style="stroke: #006600")
+		style="stroke: #2777df")
 </template>
 <script lang="ts">
 import EditorManager from '@/core/manager/editor-manager'
@@ -27,8 +27,3 @@ export default defineComponent({
 	},
 })
 </script>
-
-<style lang="scss" scoped>
-.link {
-}
-</style>

@@ -6,9 +6,9 @@ export default class ProcessBase {
 	public root: Node | null = null
 	public nodeList: Node[]
 	public nodeMap: Map<string, Node>
-	public creater: string = ''
-	public createrId: string = ''
-	public type: string = ''
+	public creater = ''
+	public createrId = ''
+	public type = ''
 	constructor(id: string, name: string) {
 		this.id = id
 		this.name = name

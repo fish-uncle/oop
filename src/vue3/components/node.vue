@@ -41,7 +41,7 @@ export default defineComponent({
 			if (currentNode && currentNode.id === props.node.id) {
 				return {
 					fill: 'rgb(255, 255, 255)',
-					stroke: '#8ae0fb',
+					stroke: '#2777df',
 					'stroke-width': 2,
 				}
 			} else {
@@ -70,7 +70,11 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .node {
-	user-select: none;
 	cursor: move;
+	user-select: none;
+	text {
+		dominant-baseline: middle;
+		text-anchor: middle;
+	}
 }
 </style>
