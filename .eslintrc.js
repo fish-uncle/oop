@@ -3,18 +3,21 @@ module.exports = {
 	env: {
 		node: true,
 	},
-	globals: {
-		echarts: true,
-	},
+	parser: 'vue-eslint-parser',
 	extends: [
-		'plugin:vue/essential',
+		'plugin:vue/vue3-recommended',
 		'eslint:recommended',
-		'@vue/typescript/recommended',
-		'@vue/prettier',
-		'@vue/prettier/@typescript-eslint',
+		'plugin:@typescript-eslint/recommended',
+		'prettier',
+		'plugin:prettier/recommended',
 	],
 	parserOptions: {
+		parser: '@typescript-eslint/parser',
 		ecmaVersion: 2020,
+		sourceType: 'module',
+		ecmaFeatures: {
+			jsx: true,
+		},
 	},
 	rules: {
 		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -22,5 +25,6 @@ module.exports = {
 		'@typescript-eslint/ban-ts-comment': 0,
 		'@typescript-eslint/no-var-requires': 0,
 		'@typescript-eslint/ban-types': 'off',
+		'vue/no-mutating-props': 'off',
 	},
 }
