@@ -20,7 +20,7 @@ export default class ProcessFactory extends Factory<ProcessFactory> {
 		this.current = this.processList[index]
 	}
 
-	public destroy () {
+	public destroy() {
 		this.current = null
 		this.processList = []
 	}

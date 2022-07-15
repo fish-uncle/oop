@@ -31,7 +31,7 @@ export default class EditorManager extends Factory<EditorManager> {
 	}
 
 	public closeProcess(process: Process, index: number) {
-		if(this.currentProcess?.id === process.id ) {
+		if (this.currentProcess?.id === process.id) {
 			this.currentProcess = null
 		}
 		this.currentNode = null
@@ -63,13 +63,13 @@ export default class EditorManager extends Factory<EditorManager> {
 	}
 
 	public getJson() {
-		if(!this.currentProcess) {
+		if (!this.currentProcess) {
 			return console.error('请选择一个流程')
 		}
 		return this.currentProcess.toJson()
 	}
 
-	public destroy () {
+	public destroy() {
 		this.currentNode = null
 		this.currentProcess = null
 		this.processFactory.destroy()
